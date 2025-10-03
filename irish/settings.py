@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from whitenoise import WhiteNoise
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ SECRET_KEY = "django-insecure-@1qpz2$k@v0yc2(tvppzru($tbt^iwy2+pulx+85mc2$!s0p9i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["irishroversinc.onrender.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -52,12 +53,17 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 ROOT_URLCONF = "irish.urls"
 
@@ -82,21 +88,35 @@ WSGI_APPLICATION = "irish.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "irish_db",
+#         "USER": "root",
+#         "PASSWORD": "OldStunna27!",
+#         "HOST": "localhost",
+#         "PORT": "3306",
+#         "OPTIONS": {
+#             "autocommit": True,
+#         },
+
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "irish_db",
-        "USER": "root",
-        "PASSWORD": "OldStunna27!",
-        "HOST": "localhost",
-        "PORT": "3306",
-        "OPTIONS": {
-            "autocommit": True,
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'irish_db',  # Your database name on Render
+        'USER': 'irish_db_user',
+        'PASSWORD': 'dLKTDWpW01f5zNsYFw8dkfVVHuQeAIBD',
+        'HOST': 'dpg-d3g4gnali9vc73eesa1g-a.oregon-postgres.render.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
         },
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
