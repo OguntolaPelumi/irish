@@ -1,0 +1,75 @@
+{% extends 'common_page.html' %}
+
+{% block title %}About{% endblock title %}
+
+{% block body_content %}
+<style>
+    .about-section {
+        background-color: #f8f9fa;
+        padding: 3rem 0;
+    }
+
+    .about-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
+
+    .about-image {
+        max-width: 250px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-title {
+        font-weight: bold;
+        color: orange; /* Bootstrap green */
+        margin-bottom: 1rem;
+    }
+
+    .about-list li {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .container {
+        margin-top: 40px;
+    }
+</style>
+
+<section class="about-section">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            
+            <!-- Optional Image -->
+            
+
+            <!-- About Content -->
+            <div class="col-md-8">
+                <div class="about-card">
+                    <h1 class="about-title">About The Irish Rover</h1>
+                    <p class="lead">
+                        <strong>The Irish Rover</strong> is a beloved pub in the heart of Astoria, New York. 
+                        Known for its warm Irish hospitality, hearty food, and classic drinks, it has become 
+                        a gathering place for locals and visitors alike. Whether you’re here to catch a game, 
+                        celebrate with friends, or simply enjoy a pint of Guinness, you’ll always feel at home.
+                    </p>
+                    <p class="lead">
+                        With roots in Irish tradition, we blend the best of classic pub culture with the 
+                        welcoming spirit of Astoria. From live sports to weekend gatherings, The Irish Rover 
+                        is more than just a bar — it’s part of the community.
+                    </p>
+                    <ul class="list-unstyled about-list">
+                        <li class="lead">🍺 Authentic Irish food & drinks</li>
+                        <li class="lead">📺 Live sports on big screens</li>
+                        <li class="lead">🎶 Events & private celebrations</li>
+                        <li class="lead">🤝 Friendly, welcoming atmosphere</li>
+                    </ul>
+                    <a href="{% url 'contact' %}" class="btn btn-danger btn-lg mt-3">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body_content %}

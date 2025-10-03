@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/br-segma" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/wallpaper" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/laughter" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/rubik-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/br-segma" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lexend" rel="stylesheet">
+
+    <style>
+      .cards h3{
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 480px){
+        .newbutton1{
+          margin-top: -1090px;
+        }
+        
+        .newbutton2{
+          margin-top: -560px;
+        }
+        .newbutton3{
+          margin-top: -30px;
+        }
+      }
+    </style>
+                
+                                                
+</head>
+<body>
+    <main>
+        
+        {% block nabar %}
+        
+        
+        <div class="bar">
+            <div class="logo">
+                <img src="{% static 'images/Irish Rover.png' %}" alt="" width="200px">
+            </div>
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'about' %}">ABOUT</a></li>
+                <li><a href="{% url 'services' %}">SERVICES</a></li>
+                <li><a href="{% url 'menus' %}">MENUS</a></li>
+                <li><a href="{%url 'contact' %}">CONTACT</a></li>
+                
+                {% if request.user.is_authenticated %}
+                
+                
+                <li>
+                  <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                      {% csrf_token %}
+                      <button type="submit" class="nav-logout-btn">
+                        LOGOUT
+                      </button>
+                    </form>
+                </li>
+                {% else %}
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'signup' %}">JOIN</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+        
+        {% endblock nabar %}
+
+
+        {% block body_content %}
+        
+        
+        {% endblock body_content %}
+
+
+
+        <footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>The Irish Rover is your go-to spot in Astoria for drinks, food, and fun. 
+         From Trivia Nights to live music, we bring people together with good vibes 
+         and great events.</p>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>3316 23RD AVE, ASTORIA, NY 11105</p>
+      <p>Astoria, New York. USA</p>
+      <p>Tel: (718) 278-9372 | (945) 331-7055</p>
+      <p>Email: <a href="mailto:support@irishrover.com">support@irishrover.com</a></p>
+    </div>
+
+    <!-- Hours -->
+    <div class="footer-col">
+      <h4>Opening Hours</h4>
+      <p>Weekdays: 08:00am - 10:00pm</p>
+      <p>Weekends: 10:00am - 12:00am</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="">Menu</a></li>
+        <li><a href="">Events</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Subscribe for updates, events & special offers</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><img src="{% static 'images/ef061f32-f393-4c16-9165-275ecfc5f2e6.svg' %}" alt="Facebook"></a>
+        <a href="#"><img src="{% static 'images/5d92dbc7-b61b-41f6-be24-011b0933b7e4.svg' %}" alt="Instagram"></a>
+        <a href="#"><img src="{% static 'images/4d9caf9d-cf50-4748-8de9-9dabb441a1ea.svg' %}" alt="Twitter"></a>
+        <a href="#"><img src="{% static 'images/fead3d77-e96e-4f3e-a712-44aa71e42f9a.svg' %}" alt="YouTube"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 The Irish Rover. All Rights Reserved. | Designed with ❤️ in Astoria</p>
+  </div>
+</footer>
+
+
+        
+
+    </main>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+</body>
+</html>

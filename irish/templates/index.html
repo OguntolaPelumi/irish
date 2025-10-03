@@ -1,0 +1,220 @@
+{% extends 'common_page.html' %}
+
+{% block title %}home{% endblock title %}
+
+
+{% load static %}
+
+{% block banner %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/br-segma" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/wallpaper" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/laughter" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/rubik-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/young-serif" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/br-segma" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lexend" rel="stylesheet">
+
+    <style>
+      .cards h3{
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 480px){
+        .newbutton1{
+          margin-top: -1090px;
+        }
+        
+        .newbutton2{
+          margin-top: -560px;
+        }
+        .newbutton3{
+          margin-top: -30px;
+        }
+      }
+    </style>
+                
+                                                
+</head>
+<body>
+    <main>
+        <div class="bar">
+            <div class="logo">
+                <img src="{% static 'images/Irish Rover.png' %}" alt="" width="200px">
+            </div>
+            <ul>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'about' %}">ABOUT</a></li>
+                <li><a href="{% url 'services' %}">SERVICES</a></li>
+                <li><a href="{% url 'menus' %}">MENUS</a></li>
+                <li><a href="{%url 'contact' %}">CONTACT</a></li>
+
+                {% if request.user.is_authenticated %}
+              
+                
+                  <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                      {% csrf_token %}
+                      <button type="submit" class="nav-logout-btn">
+                        LOGOUT
+                      </button>
+                    </form>
+                </li>
+                {% else %}
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'signup' %}">JOIN</a></li>
+                {% endif %}
+
+                
+            </ul>
+        </div>
+      {% endblock banner %}
+      
+      {% block body_content %}
+        <div class="eurosection">
+            <div class="introduction">
+                <div class="irish">
+                    <h1>IRISH ROVER</h1>
+                </div>
+
+                <div class="intro">
+                    <h2>Great Drinks, Great Prices, Great Bartenders - Located in the heart of Astoria.</h2>
+
+                </div>
+            </div>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'images/the-irish-rover.jpg' %}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'images/entrance-to-the-pub.jpg' %}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'images/556345826_1463969521859423_3876443882737829364_n.jpg' %}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+
+      
+        
+      
+      <div class="menucards">
+        <div class="cards">
+          <img src="{% static 'images/Breakfast.jpeg' %}" class="d-block w-100" alt="">
+          <h3>Breakfast</h3>
+        </div>
+        <div class="cards">
+          <img src="{% static 'images/Lunch.jpeg' %}" class="d-block w-100" alt="">
+          <h3>Lunch</h3>
+        </div>
+        <div class="cards">
+          <img src="{% static 'images/Catering.jpeg' %}" class="d-block w-100" alt="">
+          <h3>Dinner</h3>
+        </div>
+      </div>
+      
+      <div class="cardbuttons">
+        <div class="newbutton1">
+          <button><a href="">Breakfast Menu $120</a></button>
+        </div>
+        
+        <div class="newbutton2">
+          <button><a href="">Lunch Menu $250</a></button>
+        </div>
+        
+        <div class="newbutton3">
+          <button><a href="">Dinner Menu $300</a></button>
+        </div> 
+        
+      </div>
+      
+      <div class="cardbutton">
+        <button><a href="">Order Now</a></button>
+      </div>
+      
+      <div class="slider">
+        <div class="slides">
+          <div><img src="{% static 'images/IMG_5323.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5324.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5325.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5326.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5327.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5328.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5329.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5330.jpg' %}" alt=""></div>
+          
+          <!-- duplicate set for smooth looping -->
+          
+          <div><img src="{% static 'images/IMG_5323.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5324.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5325.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5326.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5327.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5328.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5329.jpg' %}" alt=""></div>
+          
+          <div><img src="{% static 'images/IMG_5330.jpg' %}" alt=""></div>
+          
+        </div>
+        
+      </div>
+      
+      {% endblock body_content %}
+      
+      <!-- <div class="footer">
+        <div class="address">
+          <h4>Office Address</h4>
+          <p>3316 23RD AVE, ASTORIA, NY 11105</p>
+          <p>Astoria, New York. USA</p>
+        </div>
+        
+        <div class="address">
+          <h4>Telephone Number</h4>
+          <p>(718) 278-9372</p>
+          <p>(945) 331-7055</p>
+          <p>Email:support@irishrover.com</p>
+        </div>
+        
+        <div class="address">
+          <h4>Working Hours</h4>
+          <p>Week Days: 08:00am-10:00pm</p><br>
+          <p>Weekends: 10:00am-10:00pm</p>
+          
+        </div>
+        
+      </div> -->
+      
+
+        
+
+    </main>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+</body>
+</html>

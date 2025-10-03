@@ -1,0 +1,120 @@
+{% extends 'common_page.html' %}
+
+{% block title %}Menu{% endblock title %}
+
+{% block body_content %}
+<style>
+    .menu-section {
+        background-color: #f8f9fa;
+        padding: 3rem 0;
+    }
+
+    .menu-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .menu-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .menu-title {
+        font-weight: bold;
+        color: #dc3545; /* Bootstrap red for menu highlight */
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .menu-icon {
+        font-size: 2rem;
+        color: #198754;
+        margin-bottom: 1rem;
+    }
+
+    .menu-price {
+        font-weight: bold;
+        color: #0d6efd;
+        margin-top: 0.5rem;
+    }
+
+    .container {
+        margin-top: 40px;
+    }
+</style>
+
+<section class="menu-section">
+    <div class="container">
+        <h1 class="menu-title">Our Menu</h1>
+        <div class="row">
+            
+            <!-- Menu Item 1 -->
+            <div class="col-md-4">
+                <div class="menu-card text-center">
+                    <div class="menu-icon">🍲</div>
+                    <h4>Irish Stew</h4>
+                    <p>Traditional lamb stew with potatoes, carrots, and herbs — a hearty Irish favorite.</p>
+                    <p class="menu-price">$15.99</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 2 -->
+            <div class="col-md-4">
+                <div class="menu-card text-center">
+                    <div class="menu-icon">🥪</div>
+                    <h4>Shepherd’s Pie</h4>
+                    <p>Savory beef and vegetables topped with creamy mashed potatoes, baked golden.</p>
+                    <p class="menu-price">$13.99</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 3 -->
+            <div class="col-md-4">
+                <div class="menu-card text-center">
+                    <div class="menu-icon">🍔</div>
+                    <h4>Classic Burger</h4>
+                    <p>Juicy beef patty served with lettuce, tomato, and a side of crispy fries.</p>
+                    <p class="menu-price">$12.99</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 4 -->
+            <div class="col-md-4">
+                <div class="menu-card text-center">
+                    <div class="menu-icon">🍗</div>
+                    <h4>Buffalo Wings</h4>
+                    <p>Spicy chicken wings served with ranch dip and celery sticks.</p>
+                    <p class="menu-price">$10.99</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 5 -->
+            <div class="col-md-4">
+                <div class="menu-card text-center">
+                    <div class="menu-icon">🍺</div>
+                    <h4>Guinness on Tap</h4>
+                    <p>Enjoy a perfectly poured pint of the world-famous Irish stout.</p>
+                    <p class="menu-price">$7.00</p>
+                </div>
+            </div>
+
+            <!-- Menu Item 6 -->
+            <div class="col-md-4">
+                <div class="menu-card text-center">
+                    <div class="menu-icon">🍷</div>
+                    <h4>Whiskey Selection</h4>
+                    <p>Choose from Jameson, Bushmills, and other fine Irish whiskeys.</p>
+                    <p class="menu-price">From $8.00</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'contact' %}" class="btn btn-danger btn-lg">Reserve a Table</a>
+        </div>
+    </div>
+</section>
+{% endblock body_content %}

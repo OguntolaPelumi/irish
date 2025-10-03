@@ -1,0 +1,105 @@
+{% extends 'common_page.html' %}
+
+{% block title %}Services{% endblock title %}
+
+{% block body_content %}
+<style>
+    .services-section {
+        background-color: #f8f9fa;
+        padding: 3rem 0;
+    }
+
+    .services-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .services-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .services-title {
+        font-weight: bold;
+        color: orange;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .services-icon {
+        font-size: 2rem;
+        color: #198754;
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        margin-top: 40px;
+    }
+</style>
+
+<section class="services-section">
+    <div class="container">
+        <h1 class="services-title">Our Services</h1>
+        <div class="row">
+            
+            <!-- Service 1 -->
+            <div class="col-md-4">
+                <div class="services-card text-center">
+                    <div class="services-icon">🍺</div>
+                    <h4>Authentic Irish Food & Drinks</h4>
+                    <p>Enjoy traditional Irish dishes and a wide selection of beers, whiskeys, and cocktails served with a warm welcome.</p>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4">
+                <div class="services-card text-center">
+                    <div class="services-icon">📺</div>
+                    <h4>Live Sports</h4>
+                    <p>Catch all major sporting events on our big screens, from Premier League football to American sports, in a lively atmosphere.</p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4">
+                <div class="services-card text-center">
+                    <div class="services-icon">🎶</div>
+                    <h4>Events & Celebrations</h4>
+                    <p>We host special events, parties, and private celebrations. Book your next gathering with us and make it unforgettable.</p>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-md-4">
+                <div class="services-card text-center">
+                    <div class="services-icon">🤝</div>
+                    <h4>Community Space</h4>
+                    <p>The Irish Rover is more than just a pub — it’s a community hub where friends and neighbors come together.</p>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-md-4">
+                <div class="services-card text-center">
+                    <div class="services-icon">🍽️</div>
+                    <h4>Weekend Brunch</h4>
+                    <p>Join us on weekends for a hearty Irish brunch menu, perfect for family and friends to kick off the day.</p>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="col-md-4">
+                <div class="services-card text-center">
+                    <div class="services-icon">🎤</div>
+                    <h4>Live Music Nights</h4>
+                    <p>Experience the spirit of Ireland with live music and entertainment, bringing the pub to life with song and laughter.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock body_content %}
