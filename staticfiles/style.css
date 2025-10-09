@@ -1,0 +1,550 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;   
+}
+
+/* .bar{
+    border: 2px solid black;
+    padding: 0px;
+    background-color: black;;
+}
+
+.bar ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    
+}
+
+.bar ul li a{
+    text-decoration: none;
+    font-family: 'BR Segma', sans-serif;
+    color: white;              
+} */
+
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 40px;  /* some space around */
+}
+
+.logo img {
+    height: 100px;   /* keeps logo proportional */
+    width: auto;    /* maintains aspect ratio */
+    border-radius: 5px; /* optional: smooth corners */
+}
+
+.bar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;  /* spacing between links */
+    margin: 0;
+    padding: 0;
+}
+
+.bar ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+                                                
+}
+
+.eurosection{
+    border: 2px solid;
+}
+.introduction{
+    border: 2px solid orange;
+    padding: 2px;
+    background-color: orange;
+}
+
+.irish{
+    color: white;
+    margin-top: 120px;
+    margin-left: 600px;
+    font-family: 'Wallpaper', sans-serif;
+                                                
+}
+.irish h1{
+    font-family: 'Wallpaper', sans-serif;   
+    font-size: 45px; 
+    margin-top: -100px; 
+    margin-left: -20px;                                    
+}
+
+.intro{
+    font-family: 'Young Serif', sans-serif;
+    color: brown;                                             
+}
+
+.carousel-item img {
+    height: 800px;          /* adjust to your liking */
+    object-fit: cover;      /* fills the area, crops if needed */
+  }
+
+.menucards{
+    display: flex;
+    gap: 20px;
+}
+
+.cards{
+    border: 2px solid white;
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 45px;
+}
+.cards img{
+    height: 400px;
+    
+}
+.cards h3{
+    margin-top: 30px;
+    margin-left: 150px;
+    font-family: 'Laughter', sans-serif;
+    
+
+}
+
+.cardbuttons{
+    display: flex;
+    gap: 280px;
+    margin-top: 15px;
+    margin-left: 160px;
+    
+}
+.cardbuttons button{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    background-color: orangered;
+}
+
+.cardbuttons button a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+                                                
+}
+
+.footer{
+    border: 2px solid;
+    background-color: brown;
+    padding: 20px;
+    margin-top: 150px;
+    display: flex;
+    gap: 300px;
+}
+
+
+.address{
+    margin-left: 40px;
+
+}
+.address h4{
+    font-family: 'Young Serif', sans-serif;
+    font-size: 20px;
+    color: white;
+                                                
+}
+.address p{
+    font-family: 'Margesh', sans-serif;
+    color: white;
+    margin-top: 30px;
+    font-size: 14px;
+                                
+}
+
+
+.cardbutton button{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: orangered;
+    margin-top: 70px;
+    margin-left: 600px;
+}
+
+.cardbutton button a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-family: 'BR Segma', sans-serif;
+                                                                                                
+}
+
+.slider{
+    width: 100%;              /* container width */
+    overflow: hidden;          /* hide extra images */
+    margin-top: 140px;
+    position: relative;
+}
+
+.slides{
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    margin-left: 50px;
+    animation: slide 20s linear infinite;
+     
+}
+
+.slides div {
+  flex: 0 0 auto;             /* prevent shrinking */
+  margin-right: 20px;         /* space between images */
+}
+
+
+.slides img{
+    height: 300px;          /* adjust to your liking */
+    object-fit: cover; 
+    border-radius: 20px; 
+    
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);  /* move entire row left */
+  }
+}
+
+
+/* .footer {
+  background: #222;
+  color: #eee;
+  padding: 60px 20px 20px;
+  font-family: Arial, sans-serif;
+} */
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ff6600;
+}
+
+.footer-col p, 
+.footer-col ul li, 
+.footer-col a {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: #ff6600;
+}
+
+/* Newsletter */
+.newsletter {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.newsletter button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #ff6600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter button:hover {
+  background: #e25500;
+}
+
+/* Social */
+.social-icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #888;
+}
+
+
+@media screen and (max-width: 480px){
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 40px;  /* some space around */
+}
+
+.logo img {
+    height: 50px;   /* keeps logo proportional */
+    width: auto;    /* maintains aspect ratio */
+    border-radius: 5px; /* optional: smooth corners */
+    margin-left: -30px;
+}
+
+.bar ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;  /* spacing between links */
+    margin-left: 60px;
+    padding: 0;
+}
+
+.bar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-family: 'Lexend', sans-serif;
+                                                
+}
+
+.eurosection{
+    border: ;
+}
+.introduction{
+    border: 2px solid orange;
+    padding: 2px;
+    background-color: orange;
+}
+.irish{
+    color: white;
+    margin-left: 150px;
+    font-family: 'Wallpaper', sans-serif;
+    
+                                                
+}
+.irish h1{
+    font-family: 'Wallpaper', sans-serif;   
+    font-size: 38px;                                        
+}
+
+.intro{
+    font-family: 'Young Serif', sans-serif;
+    color: brown;   
+                                          
+}
+.intro h2{
+    font-size: 14.5px;    
+}
+
+.carousel-item img {
+    height: 800px;          /* adjust to your liking */
+    object-fit: cover;      /* fills the area, crops if needed */
+  }
+
+.menucards{
+    display: block;
+    gap: 200px;
+}
+
+.cards{
+    border: 2px solid white;
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 5px;
+}
+
+.cards img{
+    height: 400px;
+    
+}
+
+.cards h3{
+    margin-top: 30px;
+    margin-left: 120px;
+    font-family: 'Laughter', sans-serif;
+    font-size: 30px;
+    
+
+}
+
+.cardbuttons{
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    margin-left: 150px;
+    
+}
+
+.cardbuttons button{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    background-color: orangered;
+}
+
+.cardbuttons button a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+                                                
+}
+
+.newbutton1{
+    margin-top: -1100px;
+    margin-left: -45px;
+}
+
+.newbutton1 button{
+    width: 180px;
+}
+
+.newbutton1 a{
+    font-size: 10px;
+}
+
+.newbutton2{
+    margin-top: -565px;
+    margin-left: -220px;
+}
+
+.newbutton2 button{
+    width: 180px;
+}
+
+.newbutton2 a{
+    font-size: 10px;
+}
+
+.newbutton3{
+    margin-top: -25px;
+    margin-left: -210px;
+}
+
+.newbutton3 button{
+    width: 180px;
+}
+
+.newbutton3 a{
+    font-size: 10px;
+}
+
+
+
+.footer{
+    border: 2px solid;
+    background-color: brown;
+    padding: 20px;
+    margin-top: 150px;
+    display: block;
+    gap: 10px;
+}
+
+
+.address{
+    margin-left: 40px;
+
+}
+.address h4{
+    font-family: 'Young Serif', sans-serif;
+    font-size: 30px;
+    color: white;
+                                                
+}
+.address p{
+    font-family: 'Margesh', sans-serif;
+    color: white;
+    margin-top: 30px;
+                                
+}
+
+
+.cardbutton button{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: orangered;
+    margin-top: 70px;
+    margin-left: 70px;
+}
+
+.cardbutton button a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'BR Segma', sans-serif;
+                                                                                                
+}
+
+.slider{
+    width: 100%;              /* container width */
+    overflow: hidden;          /* hide extra images */
+    margin-top: 150px;
+    display: block;
+    
+}
+
+.slides{
+    gap: 30px;
+    width: max-content;
+    margin-left: 50px;
+ 
+}
+
+.slides img{
+    height: 300px;          /* adjust to your liking */
+    object-fit: cover; 
+    border-radius: 20px; 
+    
+}
+ 
+}
+
