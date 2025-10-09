@@ -32,6 +32,11 @@ DEBUG = True
 ALLOWED_HOSTS = ["irishroversinc.onrender.com", "localhost", "127.0.0.1", 
                  'irishroverinc.com', "www.irishroverinc.com"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://irishroverinc.com',
+    'https://www.irishroverinc.com',
+]
+
 
 # Application definition
 
